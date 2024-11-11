@@ -1,0 +1,6 @@
+.publications-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(255px, 23.8908vw, 280px), 1fr));
+    grid-gap: 20px clamp(16px, 2.5597vw, 30px);
+    width: 100%;
+}

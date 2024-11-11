@@ -1,0 +1,27 @@
+.info-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    grid-gap: 10px clamp(25px, 4.2662vw, 50px);
+
+    &__item{
+        display: flex;
+        align-items: center;
+        grid-gap: clamp(8px, .8532vw, 10px);
+
+        svg,img{
+            display: flex;
+            width: clamp(20px, 2.0478vw, 24px);
+            height: clamp(20px, 2.0478vw, 24px);
+            object-fit: contain;
+            position: relative;
+            top: 1px;
+        }
+
+        p{
+            font-weight: 500;
+            font-size: clamp(16px, 1.5358vw, 18px);
+            color: var(--cl-a);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.offers-section{
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+    &__box {
+      display: flex;
+      gap: clamp(30px, 3.413vw, 40px);
+      flex-direction: column;
+      align-items: center;    
+    }
+
+    .main-top{
+        .editor{
+            width: 100%;
+            max-width: 1069px;
+       
+            *{
+              text-align: center;
+            }
+        
+            p{
+                font-size: clamp(14px, 1.3652vw, 16px);
+                line-height: 150%;
+                color: var(--cl-a);
+                opacity: .54;
+            }
+        
+            h1,h2,h3,h4,h5,h6{
+                font-size: clamp(30px, 3.5836vw, 42px);
+                font-weight: 600;
+                line-height: 140%;
+                margin-bottom: 13px;
+            }
+          }
+    }
+}

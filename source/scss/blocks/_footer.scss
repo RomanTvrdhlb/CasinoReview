@@ -1,0 +1,290 @@
+.footer {
+  padding: clamp(35px, 5.2083vw, 75px) 0 clamp(30px, 5.2083vw, 75px);
+  background: var(--bg-c);
+
+  &__box {
+    display: grid;
+    position: relative;
+   
+    @include for-laptop{
+      padding-right: Min(8.5417vw, 123px);
+    }
+
+    @include for-tablet{
+      grid-template-columns: 1.2fr .9fr 1fr;
+    }
+
+    @include tablet{
+      @include for-small-tablet{
+        grid-template-columns: .6fr .8fr 1fr;
+      }
+    }
+
+    @include small-tablet{
+      @include for-mobile{
+        grid-template-columns: auto .8fr 1fr;
+      }
+    }
+
+    @include for-mobile{
+      grid-gap: clamp(24px, 2.7778vw, 40px);
+    }
+
+    @include mobile{
+      grid-gap: 30px 24px;
+      grid-template-columns: 100%;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(20px, 1.7361vw, 25px);
+
+    &::before{
+      content: attr(data-title);
+      display: inline;
+      font-family: var(--third-family);
+      font-weight: 400;
+      font-size: clamp(20px, 2.0139vw, 29px);
+      color: var(--cl-d);
+    }
+
+    ul {
+      grid-gap: 10px 20px;
+
+      a {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: clamp(14px, 1.1806vw, 17px);
+        color: var(--cl-c);
+        transition: all 0.3s;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-color: transparent;
+  
+        &.active{
+          color: var(--cl-d);
+          font-weight: 700;
+
+          &:hover{
+            text-decoration-color: transparent;
+          }
+        }
+
+        &:hover {
+          color: var(--cl-d);
+          text-decoration-color: inherit;
+        }
+      }
+
+      li{
+        @include mobile{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      @include for-tablet{
+        display: flex;
+        flex-direction: column;
+      }
+
+      @include tablet{
+          grid-gap: 10px 14px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: center;
+    
+          @include for-mobile{
+            width: 100%;
+          }
+      }
+
+      @include mobile{
+        width: fit-content;
+        grid-gap:12px 42px;
+      }
+    }
+
+    @include mobile{
+      align-items: center;
+    }
+  }
+
+  &__contacts{
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(20px, 1.7361vw, 25px);
+
+    &::before{
+      content: attr(data-title);
+      display: inline;
+      font-family: var(--third-family);
+      font-weight: 400;
+      font-size: clamp(20px, 2.0139vw, 29px);
+      color: var(--cl-d);
+    }
+
+    ul:not([class]){
+      display: flex;
+      flex-direction: column;
+      grid-gap: 10px;
+
+      li{
+        display: flex;
+        align-items: center;
+        grid-gap: 10px;
+
+        span{
+          img,svg{
+            display: flex;
+            flex-shrink: 0;
+            width: 24px;
+            aspect-ratio: 1;
+          
+            @include mobile{
+              position: relative;
+              width: 20px;
+              top: -3px;
+            }
+          }
+  
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: clamp(16px, 1.3889vw, 20px);
+          color:  var(--cl-e);
+          display: inline-flex;
+          grid-gap: clamp(8px, .6944vw, 10px);
+
+          @include mobile{
+            font-size: 14px;
+            max-width: 280px;
+          }
+        }
+  
+        a{
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: clamp(16px, 1.3889vw, 20px);
+          color:  var(--cl-e);
+          display: inline-flex;
+          grid-gap: clamp(8px, .6944vw, 10px);
+          transition: all .3s;
+          text-decoration: underline;
+          text-underline-offset: 3px;
+          text-decoration-color: transparent;
+  
+          &:hover {
+            color: var(--cl-d);
+            text-decoration-color: inherit;
+          }
+  
+          img,svg{
+            color: var(--cl-d);
+            display: flex;
+            flex-shrink: 0;
+            width: 24px;
+            aspect-ratio: 1;
+            position: relative;
+           
+
+            @include mobile{
+              width: 20px;
+              top: -3px;
+            }
+          }
+
+          @include mobile{
+            font-size: 14px;
+          }
+        }
+
+        @include mobile{
+          justify-content: center;
+        }
+      }
+
+      @include mobile{
+        align-items: center;
+      }
+    }
+
+    @include mobile{
+      grid-column: 1/-1;
+      align-items: center;
+    }
+  }
+
+  &__logo{
+    width: clamp(80px, 10.3472vw, 149px);
+    height: fit-content;
+    display: flex;
+
+    svg,img{
+      width: 100%;
+      height: auto;
+    }
+
+    @include mobile{
+      justify-self: center;
+    }
+  }
+
+  .socials{
+    margin-top: clamp(10px, 1.3889vw, 20px);
+
+    @include for-tablet{
+      flex-grow: 1;
+      align-items: flex-end;
+    }
+
+    @include mobile{
+      justify-content: center;
+    }
+  }
+
+  .up-btn{
+    position: absolute;
+    z-index: 10;
+
+    @media (min-width: (1760px)) {
+      transform: translateX(100%);
+      right: calc(clamp(5px, 3.542vw, 68px) * -1);
+      top:  calc(clamp(10px, 1.5278vw, 22px) * -1);
+    }
+
+    @media (max-width: (1760px)) {
+      @include for-laptop{
+        top: -10px;
+      }
+      right: 0;
+    }
+
+    @include laptop{
+      @include for-tablet{
+        width: 60px;
+        height: 60px;
+      }
+
+      @include for-mobile{
+        transform: translateY(-50%);
+        top: 0;
+      }
+    }
+
+    @include tablet{
+      @include for-mobile{
+        top: 10px;
+      }
+    }
+
+    @include mobile{
+      top: 16px;
+      width: 55px;
+      height: 55px;
+    }
+    
+  }
+}

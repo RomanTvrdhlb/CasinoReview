@@ -1,0 +1,113 @@
+.accordion{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 14px;
+    counter-reset: li;
+
+    &__item{
+        display: flex;
+        flex-direction: column;
+        counter-increment: li;
+
+        &.active{
+            .accordion__btn-icon{
+                transform: scaleY(-1);
+            }
+        }
+    }
+
+    &__content{
+        transition: all .3s;
+        border: solid 1px transparent;
+
+        &.active{
+            background: var(--bg-c);
+            border-color:rgba(62, 62, 77, 0.6);
+            border-radius: 0 0 16px 16px;
+        }
+    }
+
+    .editor{
+        padding: clamp(20px, 2.5597vw, 30px) clamp(16px, 7.5085vw, 88px) clamp(20px, 2.5597vw, 30px) calc(clamp(10px, 3.6689vw, 43px) + 23px + clamp(10px, 1.664vw, 19.5px));
+
+        @include mobile{
+            padding-right: 16px;
+        }
+
+        p{
+            font-size: clamp(14px, 1.5358vw, 18px);
+            line-height: 150%;
+        }
+    }
+
+    &__btn{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        grid-gap: clamp(10px, 1.664vw, 19.5px);
+        transition: all .3s;
+        text-align: start;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: clamp(15px, 1.5358vw, 18px);
+        line-height: 150%;
+        color: var(--cl-a);
+        padding: clamp(12px, 2.176vw, 25.5px) clamp(10px, 2.3891vw, 28px) clamp(12px, 2.176vw, 25.5px) clamp(10px, 3.6689vw, 43px);
+        background: var(--bg-c);
+        border-radius: 16px;
+        border: solid 1px transparent;
+
+        @include mobile{
+            line-height: 120%;
+        }
+
+        &::before{
+            transition: all .3s;
+            content: counter(li, decimal-leading-zero);
+            display: block;
+            font-family: var(--second-family);
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 150%;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: -3px;
+            width: 23px;
+        }
+
+        &:hover{
+            border-color:  var(--br-a);
+        }
+
+        &-icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            aspect-ratio: 1;
+            flex-shrink: 0;
+            transition: all .4s;
+            color: var(--cl-d);
+        }
+
+        &.active{
+            color: var(--cl-a);
+            border-color: rgba(62, 62, 77, 0.6);
+            border-radius: 16px 16px 0 0;
+            background: var(--bg-d);
+
+            &::before{
+                color: var(--cl-a); 
+            }
+
+            .accordion__btn-icon{
+                color: var(--cl-a); 
+            }
+        }
+
+        &:disabled{
+            opacity: 0.2;
+            pointer-events: none;
+        }
+    }
+}

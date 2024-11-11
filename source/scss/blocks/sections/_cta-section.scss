@@ -1,0 +1,63 @@
+.cta-section {
+  margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+  &__box{
+    border: 1px solid var(--br-a);
+    border-radius: 16px;
+    width: 100%;
+    background: var(--bg-c);
+    display: flex;
+    flex-direction: column;
+    grid-gap: clamp(24px, 2.7304vw, 32px);
+    padding: clamp(24px, 4.0956vw, 48px) clamp(16px, 4.0956vw, 48px);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &::before, &::after{
+      position: absolute;
+      content: '';
+      top: -10px;
+      height: calc(100% + 20px);
+      width: clamp(180px, 31.57vw, 370px);
+      filter: blur(10px);
+      background-size: cover;
+      background-repeat: repeat-y;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    &::before{
+      right: -10px;
+      background-image: var(--cta-bg);
+      background-position: left center;
+    }
+
+    &::after{
+      left: -10px;
+      background-image: var(--cta-bg2);
+      background-position: right center;
+    }
+  }
+
+
+  .editor{
+    width: 100%;
+   
+    *{
+      text-align: center;
+    }
+
+    p{
+      width: 100%;
+    }
+
+    h1,h2,h3,h4,h5,h6{
+      font-size: clamp(19px, 2.3891vw, 28px);
+      font-weight: 600;
+      line-height: 120%;
+      margin-bottom: 16px;
+    }
+  }
+
+}

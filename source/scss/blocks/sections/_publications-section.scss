@@ -1,0 +1,18 @@
+.publications-section{
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+  &__box {
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    align-items: center;    
+  }
+
+  .main-top{
+    h1,h2,h3,h4,h5,h6{
+      font-size: clamp(19px, 2.3891vw, 28px);
+      font-weight: 600;
+      line-height: 120%;
+    }
+  }
+}

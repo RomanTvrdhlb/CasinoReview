@@ -1,0 +1,16 @@
+.main-top{
+    grid-gap: 13px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    width: 100%;
+    align-items: center;
+
+    .main-link{
+        font-size: clamp(16px, 1.5358vw, 18px);
+    }
+
+    .editor:only-child{
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+}

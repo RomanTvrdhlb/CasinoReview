@@ -1,0 +1,103 @@
+.offers-list{
+    display: grid;
+    grid-gap: 40px clamp(20px, 2.3038vw, 27px);
+    border: 1px solid var(--br-a);
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    overflow: hidden;
+
+    @include for-tablet{
+        padding: clamp(30px, 8.1911vw, 96px) clamp(16px, 6.9966vw, 82px) clamp(20px, 5.9727vw, 70px);
+    }
+
+    @include tablet{
+        padding: clamp(45px, 8.1911vw, 96px) clamp(16px, 2.93vw, 30px) clamp(30px, 5.9727vw, 70px);
+    }
+
+    @include for-small-tablet{
+        grid-template-columns: 1fr 1.28fr 1fr;
+    }
+
+    @include small-tablet{
+        @include for-mobile{
+            grid-template-columns: repeat(2 ,1fr);
+        }
+    }
+
+    @include mobile{
+        grid-template-columns: 100%;
+    }
+
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-image: var(--offer-bg);
+        height: clamp(200px, 22.4403vw, 263px);
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        pointer-events: none;
+        z-index: -1;
+
+        @include small-tablet{
+            height: 100%;
+            bottom: -25%;
+        }
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        
+        @include for-small-tablet{
+            &:first-of-type, &:last-of-type{
+                .offers-card{
+                    border-radius: 19px;
+                    padding: clamp(30px, 3.157vw, 37px) 16px clamp(20px, 3.413vw, 40px);
+            
+                    &__label{
+                        width: clamp(100px, 11.0922vw, 130px);
+                        height: clamp(36px, 3.5836vw, 42px);
+                    }
+                
+                    &__box{
+                        gap: 18px;
+                
+                        .editor{
+                            max-width: 190px;
+
+                            p{
+                                font-size: 10px;
+                            }
+                
+                            h1,h2,h3,h4,h5,h6{
+                                font-size: 14px;
+                            }
+                        }
+                
+                        .main-btn{
+                            border-radius: 11px;
+                            max-width: 125px;
+                            font-size: 10px;
+                            height: 34px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include small-tablet{
+            @include for-mobile{
+                &:last-of-type{
+                    grid-column: 1/-1;
+                }
+            }
+        }
+    }
+}
