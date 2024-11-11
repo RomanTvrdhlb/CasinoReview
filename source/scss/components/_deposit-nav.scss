@@ -1,0 +1,46 @@
+.deposit-nav{
+    display: grid;
+    grid-gap: 10px clamp(12px, 2.5597vw, 30px);
+    grid-template-columns: repeat(3, 1fr);
+
+    @include mobile{
+        grid-gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item{
+        @include mobile{
+            &:last-of-type{
+                grid-column: 1/-1;
+            }
+        }
+    }
+
+    &__btn{
+        width: 100%;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: clamp(16px, 1.5358vw, 18px);
+        line-height: 100%;
+        color: var(--cl-a);
+        border: 1px solid var(--br-c);
+        border-radius: 16px;
+        transition: all .3s;
+        backdrop-filter: blur(11.600000381469727px);
+        background: rgba(94, 94, 133, 0.13);
+        display: flex;
+        gap: clamp(8px, .8532vw, 10px);
+        align-items: center;
+        justify-content: center;
+        padding: clamp(10px, 1.3652vw, 16px);
+
+        svg,img{
+            width: clamp(26px, 2.8157vw, 33px);
+            height: clamp(25px, 2.7304vw, 32px);
+        }
+        
+        &:hover{
+            border-color: var(--br-a);
+        }
+    }
+}

@@ -37,7 +37,7 @@ body {
 
 main {
   min-width: 0 !important;
-  padding-top:var(--header-height);
+  padding-top: var(--header-height);
 
   &.no-padding {
     padding: 0;
@@ -212,7 +212,7 @@ textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 2px solid rgba(17, 116, 166, .5);
+  border: 2px solid rgba(17, 116, 166, 0.5);
   -webkit-text-fill-color: #1d1d1d;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
@@ -295,22 +295,57 @@ select:-webkit-autofill:focus {
   }
 }
 
-.editor {
+  main{
+    ul:not([class]) {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 3px;
+    
+      li {
+        display: inline-flex;
+        grid-gap: 10px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: var(--cl-c);
+    
+        b,
+        strong {
+          font-weight: 700;
+        }
+    
+        &::before {
+          content: "";
+          flex-shrink: 0;
+          display: block;
+          width: 3px;
+          align-self: center;
+          height: 3px;
+          margin-top: 1px;
+          border-radius: 100%;
+          background-color: var(--bg-f);
+        }
+      }
+    }
+  }
 
-  p{
+
+.editor {
+  p {
     margin-bottom: 16px;
-    i{
+    i {
       font-style: normal;
       text-decoration: underline;
       text-decoration-skip-ink: none;
     }
   }
 
-  small{
+  small {
     font-size: 12px;
     line-height: 140%;
   }
-  
+
   h1,
   h2,
   h3,
@@ -319,8 +354,8 @@ select:-webkit-autofill:focus {
   h6 {
     margin-bottom: clamp(18px, 2.0478vw, 24px);
     color: var(--cl-a);
-  
-    i{
+
+    i {
       font-style: normal;
       color: var(--cl-d);
     }
@@ -333,7 +368,7 @@ select:-webkit-autofill:focus {
     letter-spacing: -0.01em;
   }
 
-  h2{
+  h2 {
     font-size: clamp(30px, 3.5836vw, 42px);
     font-weight: 600;
     line-height: 140%;
@@ -357,7 +392,11 @@ select:-webkit-autofill:focus {
     margin-bottom: 0 !important;
   }
 
-  blockquote{
+  ul {
+    margin-bottom: clamp(16px, 1.3889vw, 20px);
+  }
+
+  blockquote {
     margin: 0;
     padding: clamp(30px, 4.1667vw, 60px) clamp(20px, 4.1667vw, 60px);
     border-bottom: 2px solid var(--br-a);
@@ -371,42 +410,6 @@ select:-webkit-autofill:focus {
     margin-bottom: clamp(35px, 4.4444vw, 64px);
   }
 
-  ul:not([class]) {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: clamp(16px, 1.3889vw, 20px);
-    grid-gap: 13px;
-
-    li {
-      display: inline-flex;
-      grid-gap: 9px;
-
-      *{
-        color: var(--cl-e);
-        font-family: var(--font-family);
-        font-weight: 400;
-        font-size: clamp(14px, 1.3194vw, 19px);
-        line-height: 139%;
-
-        b, strong{
-          font-weight: 700;
-        }
-      }
-
-      &::before{
-        content: '';
-        flex-shrink: 0;
-        display: block;
-        width: 24px;
-        height: 24px;
-        background-image: var(--check);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-      }
-    }
-  }
-
   ol:not([class]) {
     display: flex;
     flex-direction: column;
@@ -416,9 +419,9 @@ select:-webkit-autofill:focus {
 
     li {
       counter-increment: li;
-      
-      &::before{
-        content: counter(li) '.';
+
+      &::before {
+        content: counter(li) ".";
         display: inline-block;
         font-family: var(--third-family);
         font-weight: 400;
@@ -428,10 +431,10 @@ select:-webkit-autofill:focus {
       }
     }
 
-    ol{
+    ol {
       grid-gap: 0;
-      li{
-        &::before{
+      li {
+        &::before {
           font-family: var(--font-family);
           font-size: clamp(14px, 1.3194vw, 19px);
           line-height: 139%;
@@ -444,7 +447,7 @@ select:-webkit-autofill:focus {
         line-height: 139%;
         color: var(--cl-e);
 
-        *{
+        * {
           font-family: var(--font-family);
           font-size: clamp(14px, 1.3194vw, 19px);
           line-height: 139%;
@@ -455,11 +458,7 @@ select:-webkit-autofill:focus {
     }
   }
 
-  img{
+  img {
     margin-bottom: 32px;
   }
-
 }
-
-
-

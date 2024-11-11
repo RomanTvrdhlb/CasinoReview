@@ -16,7 +16,6 @@
 
     @include tablet {
       transform: translate(0) !important;
-      padding: clamp(15px, 1.3889vw, 20px) 0;
       box-shadow: 0 4px 22px 0 rgba(6, 8, 17, 0.11);
       background: var(--bg-c);
     }
@@ -26,8 +25,7 @@
     }
 
     &.return-to-place {
-      padding: 16px 0 4px;
-      box-shadow: 0 4px 22px 0 rgba(87, 224, 108, .16);
+      box-shadow: 0 4px 22px 0 rgba(87, 224, 108, 0.16);
       background: var(--bg-c);
       transform: translateY(0);
 
@@ -39,11 +37,12 @@
         }
       }
 
-      .lang-box{
+      .lang-box {
         background: rgba(42, 42, 61, 0.38);
       }
 
       @include for-tablet {
+        padding: 16px 0 4px;
         transition: transform 0.5s ease-in-out;
       }
     }
@@ -55,21 +54,21 @@
     background: var(--bg-c);
   }
 
+  @include for-tablet {
+    padding: 16px 0 0;
+  }
+
+  @include tablet {
+    padding: 14px 0;
+  }
+
   &__box {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1fr;
     position: relative;
     z-index: 2;
     align-items: center;
     gap: 12px;
-  }
-
-  &__top {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    width: 100%;
-    grid-gap: 32px;
   }
 
   &__wrapp {
@@ -78,16 +77,33 @@
     justify-content: flex-end;
     gap: 8px;
 
-    .lang-box {
-      margin-right: clamp(8px, 1.3652vw, 16px);
+    @include for-tablet {
+      .lang-box {
+        margin-right: clamp(8px, 1.3652vw, 16px);
+      }
     }
 
     .search {
-      max-width: 240px;
+      @include for-tablet {
+        max-width: 240px;
+      }
     }
 
     .main-btn {
-      max-width: 182px;
+      @include for-tablet {
+        max-width: 182px;
+      }
+
+      @include tablet {
+        grid-column: 1/-1;
+      }
+    }
+
+    @include tablet {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr auto;
+      row-gap: 16px;
     }
   }
 
@@ -96,13 +112,14 @@
     align-items: center;
     z-index: 5;
     width: 100%;
+    grid-column: 1/-1;
 
     ul {
       display: flex;
       align-items: center;
       width: 100%;
       justify-content: space-between;
-      grid-gap: 10px;
+      grid-gap: clamp(5px, 0.694vw, 10px);
 
       @include for-tablet {
         &:not(.sub-menu) {
@@ -170,10 +187,14 @@
         position: relative;
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: clamp(14px, 1.3652vw, 16px);
+        font-size: clamp(13px, 1.111vw, 16px);
         color: var(--cl-a);
-        padding: 20px 20px 23px;
-        height: 67px;
+        padding: clamp(14px, 1.7065vw, 20px) clamp(10px, 1.389vw, 20px)
+          clamp(17px, 1.9625vw, 23px);
+
+        @include for-tablet {
+          height: 67px;
+        }
 
         &:hover {
           color: var(--cl-d);
@@ -203,11 +224,7 @@
 
       li {
         &:first-of-type {
-          padding-top: 15px;
-        }
-
-        &:last-of-type {
-          padding-bottom: 15px;
+          padding-top: 10px;
         }
       }
     }
@@ -223,7 +240,7 @@
     }
 
     svg {
-      transition: all .3s;
+      transition: all 0.3s;
       fill: transparent;
       width: 24px;
       height: 24px;
@@ -242,7 +259,8 @@
         transform: scaleY(-1);
       }
 
-      &::after, &::before{
+      &::after,
+      &::before {
         opacity: 1;
         visibility: visible;
       }
@@ -260,7 +278,7 @@
     transition: 0.2s ease-in-out;
     z-index: 10;
 
-    @include for-tablet { 
+    @include for-tablet {
       border-radius: 0 0 16px 16px;
       left: 0px;
       position: absolute;
@@ -312,8 +330,8 @@
     background: var(--bg-c);
     padding: 11px 12px;
     border-radius: 10px;
-    transition: all .3s;
-  
+    transition: all 0.3s;
+
     .menu-button {
       font-family: var(--font-family);
       font-weight: 400;
@@ -323,7 +341,7 @@
       display: flex;
       align-items: center;
       grid-gap: 8px;
-  
+
       &::before {
         position: absolute;
         height: 40px;
@@ -334,91 +352,87 @@
         visibility: hidden;
         z-index: 2;
         transform: translateX(-55%);
-  
+
         @include for-tablet {
           content: "";
         }
       }
-  
+
       svg {
         width: 20px;
         height: 20px;
       }
     }
-  
+
     .sub-menu {
-      @include tablet {
-        li {
-          display: contents;
-        }
-        a {
-          font-size: 18px !important;
-          padding: 0 !important;
-          width: fit-content !important;
-  
-          &.disabled {
-            order: -1;
-            color: var(--cl-d);
-            display: flex !important;
-            opacity: 1 !important;
+      max-height: initial !important;
+      visibility: hidden;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 11px 12px;
+      border-radius: 10px;
+      top: calc(100% + 5px);
+      gap: 0;
+
+      li {
+        
+        &:last-of-type {
+          a {
+            margin: 0;
           }
+        }
+
+        &:first-of-type{
+          padding: 0;
         }
       }
-  
-      @include for-tablet {
+
+      a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
         display: flex;
-        flex-direction: column;
-        padding: 11px 12px;
-        border-radius: 10px;
-        top: calc(100% + 5px);
-        gap: 0;
-  
-        li {
-          &:last-of-type {
-            a {
-              margin: 0;
-            }
-          }
+        align-items: center;
+        grid-gap: 8px;
+        margin-bottom: 8px;
+        transition: all 0.3s;
+        color: var(--cl-a);
+
+        &.disabled {
+          display: none;
         }
-  
-        a {
-          font-family: var(--font-family);
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 150%;
-          display: flex;
-          align-items: center;
-          grid-gap: 8px;
-          margin-bottom: 8px;
-          transition: all 0.3s;
-          color: var(--cl-a);
-  
-          &.disabled {
-            display: none;
-          }
-  
-          &:hover {
-            color: var(--cl-d);
-          }
+
+        &:hover {
+          color: var(--cl-d);
         }
+      }
+
+      @include tablet {
+        border: 1px solid rgba(62, 62, 77, 0.6);
       }
     }
-  
+
     &:hover {
-      @include for-tablet {
-        .menu-button {
-          color: var(--cl-d);
-  
-          &::before {
-            visibility: visible;
-          }
-        }
-  
-        .sub-menu {
-          opacity: 1;
-          visibility: visible !important;
+      .menu-button {
+        color: var(--cl-d);
+
+        &::before {
+          visibility: visible;
         }
       }
+
+      .sub-menu {
+        opacity: 1;
+        visibility: visible !important;
+      }
+    }
+
+    @include tablet {
+      background: rgba(42, 42, 61, 0.38);
     }
   }
 }

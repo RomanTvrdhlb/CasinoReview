@@ -1,19 +1,18 @@
 <header class="header fixed-block">
   <div class="container">
     <div class="header__box">
+      <a href="/" class="logo">
+        <svg width="243" height="17">
+          <use href='img/sprite/sprite.svg#logo'></use>
+        </svg>
+      </a>
+
       <button class="burger">
         <span class="burger__line"></span>
       </button>
 
       <div class="mobile">
         <div class="mobile__box">
-          <div class="header__top">
-            <a href="/" class="logo">
-              <svg width="243" height="17">
-                <use href='img/sprite/sprite.svg#logo'></use>
-              </svg>
-            </a>
-
             <div class="header__wrapp">
               <form class="search">
                 <label for="search" class="search__label">
@@ -55,9 +54,8 @@
       
               <a href="#" class="main-btn">Get your bonus</a>
             </div>
-          </div>
 
-          <nav class="header__nav">
+          <nav class="header__nav" data-accordion-init>
             <ul>
               <li class="current_page_item">
                 <a href="index.html" class="active">BTC Casinos</a>

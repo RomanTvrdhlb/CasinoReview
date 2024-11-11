@@ -1,6 +1,7 @@
 .casinos-section {
   margin-bottom: clamp(40px, 5.1195vw, 60px);
-
+  overflow: hidden;
+  
   &__nav {
     display: flex;
     align-items: center;

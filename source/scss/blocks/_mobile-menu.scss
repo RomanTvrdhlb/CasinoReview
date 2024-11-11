@@ -11,7 +11,7 @@
   max-width: 430px;
   transform: translateX(110%);
   padding: 32px 24px 32px;
-  border-top: solid 1px var(--br-a);
+  border-top: solid 1px rgba(62, 62, 77, 0.6);
 
   @include  for-tablet{
     display: contents;
@@ -41,7 +41,7 @@
   &__box {
     display: flex;
     flex-direction: column;
-    grid-gap: 32px;
+    grid-gap: 28px;
     width: 100%;
     align-items: center;
 
@@ -66,7 +66,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        grid-gap: 24px;
+        grid-gap: 20px;
 
         a, .menu-button {
           width: 100%;
@@ -85,7 +85,9 @@
           justify-content: space-between;
 
           svg,img{
-            display: none;
+            position: absolute;
+            top: 6px;
+            right: -28px;
           }
         }
 
@@ -95,14 +97,14 @@
       }
 
       .sub-menu{
-        flex-direction: row;
+ 
         align-items: center;
-      }
 
-
-      .menu-item-has-children{
-        padding-top: 32px;
-        border-top: solid 1px var(--br-c);
+        @include tablet{
+          a{
+            font-size: 16px;
+          }
+        }
       }
     }
   }
