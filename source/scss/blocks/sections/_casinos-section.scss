@@ -1,0 +1,40 @@
+.casinos-section {
+  margin-bottom: clamp(40px, 5.1195vw, 60px);
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    margin-bottom: clamp(20px, 2.0478vw, 24px);
+
+    &::before {
+      content: attr(data-title);
+      font-family: var(--font-family);
+      font-weight: 600;
+      font-size: clamp(19px, 2.3891vw, 28px);
+      line-height: 120%;
+      color: var(--cl-a);
+      flex-grow: 1;
+    }
+
+    @include tablet{
+        padding: 0 var(--container-offset);
+    }
+  }
+
+  .container{
+    @include tablet {
+        width: calc(100% + (var(--container-offset) * 2));
+        margin: 0 calc(var(--container-offset) * -1);
+       
+      }
+  }
+
+  .swiper {
+    &-container {
+        @include tablet{
+            padding: 0 var(--container-offset);
+        }
+    }
+  }
+}

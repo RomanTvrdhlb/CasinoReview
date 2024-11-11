@@ -319,6 +319,11 @@ select:-webkit-autofill:focus {
   h6 {
     margin-bottom: clamp(18px, 2.0478vw, 24px);
     color: var(--cl-a);
+  
+    i{
+      font-style: normal;
+      color: var(--cl-d);
+    }
   }
 
   h1 {

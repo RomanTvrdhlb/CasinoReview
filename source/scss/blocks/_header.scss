@@ -4,17 +4,18 @@
   position: fixed;
   z-index: 30;
   top: 0;
-  padding: clamp(15px, 2.4306vw, 35px) 0;
-  transition: all .4s .05s;
-  transition-timing-function: cubic-bezier(.25,.1,.25,1);
+  padding: 16px 0 0;
+  transition: all 0.3s 0.05s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: var(--bg-g);
 
-  &.sticky{
-    @include for-tablet{
+  &.sticky {
+    @include for-tablet {
       transition: transform 0.3s ease-in-out;
     }
 
-    @include tablet{
-      transform:  translate(0) !important;
+    @include tablet {
+      transform: translate(0) !important;
       padding: clamp(15px, 1.3889vw, 20px) 0;
       box-shadow: 0 4px 22px 0 rgba(6, 8, 17, 0.11);
       background: var(--bg-c);
@@ -25,88 +26,68 @@
     }
 
     &.return-to-place {
-      padding: clamp(15px, 1.3889vw, 20px) 0;
-      box-shadow: 0 4px 22px 0 rgba(6, 8, 17, 0.11);
+      padding: 16px 0 4px;
+      box-shadow: 0 4px 22px 0 rgba(87, 224, 108, .16);
       background: var(--bg-c);
       transform: translateY(0);
 
-      .header__logo{
-        @include for-tablet{
-          width: 75px;
-          height: 70px;
-        }
-
-        @include tablet{
-          width: clamp(50px, 6.348vw, 65px);
+      .header__nav {
+        @include for-tablet {
+          opacity: 0;
+          visibility: hidden;
+          height: 0;
         }
       }
 
-      @include for-tablet{
-           transition: transform 0.5s ease-in-out;
+      .lang-box{
+        background: rgba(42, 42, 61, 0.38);
+      }
+
+      @include for-tablet {
+        transition: transform 0.5s ease-in-out;
       }
     }
   }
 
-
   &.open-menu {
-    transition: background .2s;
-    transition-timing-function: cubic-bezier(.25,.1,.25,1);
+    transition: background 0.2s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
     background: var(--bg-c);
   }
 
-  @include tablet{
-    padding: 15px 0;
-  }
-
   &__box {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 2;
     align-items: center;
-
-    @include for-laptop{
-      grid-template-columns: repeat(2, auto);
-      justify-content: space-between;
-    }
-
-    @include laptop{
-      @include for-tablet{
-        grid-template-columns: auto 1fr auto;
-      }
-    }
-
-    @include for-tablet {
-      grid-gap: 20px;
-    }
-
-    @include tablet {
-      grid-template-columns: auto 1fr;
-      grid-gap: 10px;
-    }
-  
-    .transparent-btn{
-      padding: 18px clamp(16px, 1.9444vw, 28px) 15px;
-      height: clamp(50px, 4.0972vw, 59px);
-
-      @include desktop{
-        padding: 18px 16px 15px;
-      }
-    }
+    gap: 12px;
   }
 
-  &__logo{
-    display: flex;
-    width: clamp(70px, 6.8056vw, 98px);
-    height: fit-content;
-    transition: all .4s;
+  &__top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    width: 100%;
+    grid-gap: 32px;
+  }
 
-    svg,img{
-      width: 100%;
-      height: auto;
+  &__wrapp {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+
+    .lang-box {
+      margin-right: clamp(8px, 1.3652vw, 16px);
     }
 
-    @include tablet{
-      width: clamp(50px, 6.348vw, 65px);
+    .search {
+      max-width: 240px;
+    }
+
+    .main-btn {
+      max-width: 182px;
     }
   }
 
@@ -114,54 +95,199 @@
     display: flex;
     align-items: center;
     z-index: 5;
-
-    @include for-laptop{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    @include laptop{
-      @include for-tablet{
-        justify-content: center;
-      }
-    }
-    
-
+    width: 100%;
 
     ul {
       display: flex;
       align-items: center;
-      grid-gap: clamp(10px, 1.5278vw, 22px);
+      width: 100%;
+      justify-content: space-between;
+      grid-gap: 10px;
+
+      @include for-tablet {
+        &:not(.sub-menu) {
+          height: 100%;
+        }
+      }
 
       li {
         display: flex;
         align-items: center;
         position: relative;
         z-index: 1;
+
+        &:before {
+          z-index: 2;
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          content: "";
+          background: var(--bg-d);
+          bottom: 0;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s;
+          pointer-events: none;
+        }
+
+        &:after {
+          background: var(--gr-b);
+          z-index: -1;
+          position: absolute;
+          content: "";
+          inset: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.4s;
+          pointer-events: none;
+        }
+
+        &.current_page_item {
+          &:before,
+          &::after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        @include for-tablet {
+          height: 100%;
+        }
+
+        @include tablet {
+          flex-direction: column;
+        }
       }
 
-      a {
-        transition: all 0.3s linear;
+      a,
+      .menu-button {
+        text-align: center;
+        transition: all 0.3s ease;
         display: flex;
         align-items: center;
-        grid-gap: 5px;
+        grid-gap: 4px;
         position: relative;
-        font-family: var(--second-family);
+        font-family: var(--font-family);
         font-weight: 400;
-        font-size: clamp(14px, 1.1806vw, 17px);
-        color: var(--cl-c);
-        white-space: nowrap;
+        font-size: clamp(14px, 1.3652vw, 16px);
+        color: var(--cl-a);
+        padding: 20px 20px 23px;
+        height: 67px;
 
-        &.active{
-          font-weight: 700;
-          color:  var(--cl-d);
-        }
-
-        &:hover {   
+        &:hover {
           color: var(--cl-d);
         }
+      }
+    }
+  }
+
+  @include for-tablet {
+    .sub-menu[data-content] {
+      max-height: initial !important;
+      visibility: hidden;
+    }
+  }
+
+  @include tablet {
+    .sub-menu[data-content] {
+      padding: 0 16px;
+      margin-top: 0;
+      border: transparent;
+      grid-gap: 20px;
+
+      a {
+        padding: 0;
+        font-size: 20px;
+      }
+
+      li {
+        &:first-of-type {
+          padding-top: 15px;
+        }
+
+        &:last-of-type {
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    @include tablet {
+      &.active {
+        svg {
+          transform: scaleY(-1);
+        }
+      }
+    }
+
+    svg {
+      transition: all .3s;
+      fill: transparent;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .menu-item-has-children:hover {
+    @include for-tablet {
+      .sub-menu {
+        opacity: 1;
+        visibility: visible !important;
+      }
+
+      .menu-button svg {
+        fill: transparent;
+        transform: scaleY(-1);
+      }
+
+      &::after, &::before{
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .sub-menu {
+    background: var(--bg-c);
+    border: solid 1px rgba(62, 62, 77, 0.6);
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+    z-index: 10;
+
+    @include for-tablet { 
+      border-radius: 0 0 16px 16px;
+      left: 0px;
+      position: absolute;
+      top: 100%;
+      padding: 15px 20px 18px;
+      width: 100%;
+    }
+
+    li {
+      @include for-tablet {
+        width: 100%;
+        display: flex;
+      }
+    }
+
+    a {
+      text-align: start;
+      padding: 0;
+      font-size: clamp(13px, 1.2799vw, 15px);
+
+      @include for-tablet {
+        width: 100%;
+        height: fit-content;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
@@ -174,6 +300,125 @@
 
     @include tablet {
       @include burger;
+    }
+  }
+
+  .lang-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    z-index: 10;
+    background: var(--bg-c);
+    padding: 11px 12px;
+    border-radius: 10px;
+    transition: all .3s;
+  
+    .menu-button {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      color: var(--cl-a);
+      display: flex;
+      align-items: center;
+      grid-gap: 8px;
+  
+      &::before {
+        position: absolute;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+        transform: translateX(-55%);
+  
+        @include for-tablet {
+          content: "";
+        }
+      }
+  
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  
+    .sub-menu {
+      @include tablet {
+        li {
+          display: contents;
+        }
+        a {
+          font-size: 18px !important;
+          padding: 0 !important;
+          width: fit-content !important;
+  
+          &.disabled {
+            order: -1;
+            color: var(--cl-d);
+            display: flex !important;
+            opacity: 1 !important;
+          }
+        }
+      }
+  
+      @include for-tablet {
+        display: flex;
+        flex-direction: column;
+        padding: 11px 12px;
+        border-radius: 10px;
+        top: calc(100% + 5px);
+        gap: 0;
+  
+        li {
+          &:last-of-type {
+            a {
+              margin: 0;
+            }
+          }
+        }
+  
+        a {
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 150%;
+          display: flex;
+          align-items: center;
+          grid-gap: 8px;
+          margin-bottom: 8px;
+          transition: all 0.3s;
+          color: var(--cl-a);
+  
+          &.disabled {
+            display: none;
+          }
+  
+          &:hover {
+            color: var(--cl-d);
+          }
+        }
+      }
+    }
+  
+    &:hover {
+      @include for-tablet {
+        .menu-button {
+          color: var(--cl-d);
+  
+          &::before {
+            visibility: visible;
+          }
+        }
+  
+        .sub-menu {
+          opacity: 1;
+          visibility: visible !important;
+        }
+      }
     }
   }
 }

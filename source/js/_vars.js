@@ -8,7 +8,9 @@ export default {
   header: document.querySelector('header'),
   footer: document.querySelector('footer'),
 
-  mainSliders: document.querySelectorAll('.about-slider'),
+  casinoSliders: document.querySelectorAll('.casinos-section'),
+
+
   infoSliders: document.querySelectorAll('.info-slider'),
   cookingSliders: document.querySelectorAll('.cooking-slider'),
   parentSliders: document.querySelectorAll('.product-slider'),

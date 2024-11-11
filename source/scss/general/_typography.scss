@@ -29,6 +29,16 @@
   }
 }
 
+.logo{
+  width: clamp(200px, 20.7338vw, 243px);
+  height: clamp(15px, 1.4505vw, 17px);
+
+  svg,img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
 
 .title{
   font-family: var(--font-family);
