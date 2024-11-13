@@ -1,8 +1,8 @@
 <header class="header fixed-block">
   <div class="container">
     <div class="header__box">
-      <a href="/" class="header__logo" aria-label="logo">
-        <svg width='98' height='90'>
+      <a href="/" class="logo">
+        <svg width="243" height="17">
           <use href='img/sprite/sprite.svg#logo'></use>
         </svg>
       </a>
@@ -13,46 +13,114 @@
 
       <div class="mobile">
         <div class="mobile__box">
-          <nav class="header__nav">
+            <div class="header__wrapp">
+              <form class="search">
+                <label for="search" class="search__label">
+                  <input type="text" class="search__input" name="search" id="search" placeholder="Search">
+                  <button class="search__btn">
+                    <svg width='24' height='24'>
+                      <use href='img/sprite/sprite.svg#search'></use>
+                    </svg>
+                  </button>
+                </label>
+              </form>
+      
+              <div class="lang-box">
+                <button type="button" data-id="EN" class="menu-button">
+                  <svg width='20' height='20'>
+                    <use href='img/sprite/sprite.svg#en'></use>
+                  </svg>
+                  EN
+                </button>
+                <ul class="sub-menu" data-content="EN">
+                  <li>
+                    <a href="#" class="disabled">
+                      <svg width='20' height='20'>
+                        <use href='img/sprite/sprite.svg#en'></use>
+                      </svg>
+                      EN
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <svg width='20' height='20'>
+                        <use href='img/sprite/sprite.svg#en'></use>
+                      </svg>
+                      RU
+                    </a>
+                  </li>
+                </ul>
+              </div>
+      
+              <a href="#" class="main-btn">Get your bonus</a>
+            </div>
+
+          <nav class="header__nav" data-accordion-init>
             <ul>
               <li>
-                <a href="index.html">Головна</a>
+                <a href="index.html">BTC Casinos</a>
+              </li>
+              <li class="menu-item-has-children">
+                <button type="button" data-id="1" class="menu-button">BTC Betting
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#arrow-d'></use>
+                  </svg>
+                </button>
+                <ul class="sub-menu" data-content="1">
+                  <li><a href="#">Coin Casinos</a></li>
+                  <li><a href="#">Cardano Casinos</a></li>
+                  <li><a href="#">BTC Casinos</a></li>
+                  <li><a href="#">BTC Casinos</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <button type="button" data-id="2" class="menu-button">Reviews
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#arrow-d'></use>
+                  </svg>
+                </button>
+                <ul class="sub-menu" data-content="2">
+                  <li><a href="#">Coin Casinos</a></li>
+                  <li><a href="#">Cardano Casinos</a></li>
+                  <li><a href="#">BTC Casinos</a></li>
+                  <li><a href="#">BTC Casinos</a></li>
+                </ul>
+              </li>
+              <li class="menu-item-has-children">
+                <button type="button" data-id="3" class="menu-button">By Currency
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#arrow-d'></use>
+                  </svg>
+                </button>
+                <ul class="sub-menu" data-content="3">
+                  <li><a href="#">Coin Casinos</a></li>
+                  <li><a href="#">Cardano Casinos</a></li>
+                  <li><a href="#">BTC Casinos</a></li>
+                </ul>
+              </li>
+              <li class="current_page_item">
+                <a href="#" >Blog</a>
+              </li>
+              <li class="menu-item-has-children">
+                <button type="button" data-id="4" class="menu-button">Bonuses
+                  <svg width='24' height='24'>
+                    <use href='img/sprite/sprite.svg#arrow-d'></use>
+                  </svg>
+                </button>
+                <ul class="sub-menu" data-content="4">
+                  <li><a href="#">Coin Casinos</a></li>
+                </ul>
               </li>
               <li>
-                <a href="products.html">Продукція</a>
+                <a href="#">Games</a>
               </li>
               <li>
-                <a href="recipes.html">Рецепти</a>
-              </li>
-              <li>
-                <a href="about.html">Про компанію</a>
-              </li>
-              <li>
-                <a href="production.html">Виробництво</a>
-              </li>
-              <li>
-                <a href="cooperation.html">Співпраця</a>
-              </li>
-              <li>
-                <a href="blog.html" class="active">Блог</a>
-              </li>
-              <li>
-                <a href="contacts.html">Контакти</a>
+                <a href="#">About Us</a>
               </li>
             </ul>
           </nav>
-
-          <a href="tel:380732005180" class="transparent-btn">
-            <svg width='24' height='24'>
-              <use href='img/sprite/sprite.svg#call'></use>
-            </svg>
-            +38 (073) 200-51-80
-          </a>
         </div>
       </div>
-
-
-
     </div>
   </div>
 </header>

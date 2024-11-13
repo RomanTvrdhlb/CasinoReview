@@ -69,5 +69,16 @@
             font-weight: 600;
             line-height: 120%;
         }
+
+        img,picture{
+            width: 100%;
+            height: auto;
+            max-height: 420px;
+        }
+
+        .main-link{
+            margin-top: 8px;
+            width: fit-content;
+        }
     }
 }

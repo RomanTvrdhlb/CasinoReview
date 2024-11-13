@@ -7,6 +7,8 @@
     display: flex;
     flex-direction: column;
     gap: clamp(20px, 2.0478vw, 24px);
+    position: relative;
+    z-index: 1;
 
     &__image{
         width: calc(100% + (clamp(20px, 2.0478vw, 24px) * 2));
@@ -84,5 +86,22 @@
             width: 100%;
             height: 100%;
         }
+    }
+
+    &__label{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 135%;
+        color: var(--cl-h);
+        padding: 7px 10px;
+        background: var(--bg-d);
+        border-radius: 60px;
+        width: fit-content;
+        height: 30px;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        z-index: 2;
     }
 }

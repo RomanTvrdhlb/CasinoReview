@@ -1,25 +1,23 @@
 .news-section{
-    background: var(--bg-a);
-    padding: clamp(40px, 4.1667vw, 60px) 0;
     overflow: hidden;
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+    
     &__box{
         display: flex;
         flex-direction: column;
-        grid-gap: clamp(32px, 3.3333vw, 48px);
-     
-        .page-nav{
-            margin-top: 2px;
+        gap: clamp(30px, 3.413vw, 40px);
+
+        .main-btn{
+            width: fit-content;
+            align-self: center;
         }
     }
 
     &__top{
         display: flex;
-        flex-wrap: wrap;
-        grid-gap: 15px;
+        flex-direction: column;
+        gap: clamp(20px, 2.0478vw, 24px);
 
-        @include for-tablet{
-            align-items: center;
-        }
 
         @include tablet{
             align-items: flex-start;
@@ -46,11 +44,58 @@
     }
 
     &__title{
-        flex: 1;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: clamp(20px, 2.3891vw, 28px);
+        line-height: 110%;
+        letter-spacing: -0.01em;
+        color: var(--cl-a);
+    }
 
-        font-family: var(--third-family);
-        font-weight: 400;
-        font-size: clamp(24px, 2.4306vw, 35px);
-        line-height: 102%;
+    .news-list{
+        .publications-card{
+            padding-bottom: clamp(20px, 2.7304vw, 32px);
+
+            &__user{
+                align-self: end;
+                margin-bottom: 4.5px;
+            }
+    
+            &__pretitle{
+                align-self: end;
+                margin-bottom: 4.5px;
+            }
+
+            &__bottom{
+                margin-top: calc(clamp(4px, .6826vw, 8px) * -1);
+            }
+
+            &__image{
+                height: clamp(150px, 15.3584vw, 180px);
+            }
+    
+            &__name{
+                align-self: end;
+                margin-bottom: -4.5px;
+            }
+
+            .editor{
+                h1,h2,h3,h4,h5,h6{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                p{
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
     }
 }

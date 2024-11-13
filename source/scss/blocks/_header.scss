@@ -170,6 +170,8 @@
 
         @include for-tablet {
           height: 100%;
+          width: 100%;
+          justify-content: center;
         }
 
         @include tablet {
@@ -194,6 +196,7 @@
 
         @include for-tablet {
           height: 67px;
+          flex-shrink: 0;
         }
 
         &:hover {

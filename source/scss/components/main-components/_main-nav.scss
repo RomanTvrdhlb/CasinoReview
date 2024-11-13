@@ -1,7 +1,7 @@
 .main-nav{
     display: flex;
     align-items: center;
-    grid-gap: clamp(10px, 1.1111vw, 16px);
+    gap: 12px;
 
     &__btn{
         display: flex;
@@ -9,26 +9,32 @@
         justify-content: center;
         grid-gap: 8px;
         transition: all .4s;
-        font-family: var(--font-family);
-        font-weight: 400;
-        font-size: 19px;
-        line-height: 139%;
         text-align: center;
-        color: var(--cl-e);
-        padding: clamp(5px, .4861vw, 7px) clamp(16px, 1.6667vw, 24px);
-        border-radius: 80px;
-        background: var(--bg-f);
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 14px;
+        color: var(--cl-a);
+        border-radius: 12px;
+        width: fit-content;
+        height: clamp(38px, 3.5836vw, 42px);
+        background: var(--bg-j);
+        padding: clamp(10px, 1.0239vw, 12px) clamp(14px, 1.3652vw, 16px);
+        border: solid 1px transparent;
 
         &.active{
-            background: var(--bg-g);
             color: var(--cl-a);
+            background: rgba(87, 224, 108, 0.2);
+            border-color: var(--br-a);
         }
 
-
         &:hover{
+           color: var(--cl-d);
+        }
+
+        &:active{
             color: var(--cl-a);
-            background: var(--bg-g);
-            opacity: .5;
+            background: rgba(87, 224, 108, 0.2);
+            border-color: var(--br-a);
         }
     }
 }
