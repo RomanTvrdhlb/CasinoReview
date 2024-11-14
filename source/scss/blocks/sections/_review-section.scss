@@ -51,18 +51,6 @@
         }
     }
 
-    &__content{
-        display: flex;
-        flex-direction: column;
-        grid-gap: clamp(18px, 2.0478vw, 24px);
-
-        &:first-of-type{
-            @include for-small-tablet{
-                grid-column: 1/-1;
-            }
-        }
-    }
-
     .editor{
         h1,h2,h3,h4,h5,h6{
             font-size: clamp(19px, 2.3891vw, 28px);
@@ -79,6 +67,12 @@
         .main-link{
             padding-top: 8px;
             width: fit-content;
+        }
+
+        &:first-of-type{
+            @include for-small-tablet{
+                grid-column: 1/-1;
+            }
         }
     }
 }

@@ -1,0 +1,11 @@
+.types-section{
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+   
+    }
+
+}

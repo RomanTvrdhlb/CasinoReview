@@ -168,6 +168,10 @@
     @include mobile{
       grid-template-columns: 100%;
     }
+
+    .main-btn{
+      padding: 5px 10px;
+    }
   }
 
   &__inner {

@@ -1,0 +1,10 @@
+.casino-section {
+  margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 2.7304vw, 32px);
+  }
+}

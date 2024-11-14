@@ -396,19 +396,6 @@ select:-webkit-autofill:focus {
     margin-bottom: clamp(16px, 1.3889vw, 20px);
   }
 
-  blockquote {
-    margin: 0;
-    padding: clamp(30px, 4.1667vw, 60px) clamp(20px, 4.1667vw, 60px);
-    border-bottom: 2px solid var(--br-a);
-    border-top: 2px solid var(--br-a);
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: clamp(14px, 1.3194vw, 19px);
-    line-height: 139%;
-    color: var(--cl-d);
-    width: 100%;
-    margin-bottom: clamp(35px, 4.4444vw, 64px);
-  }
 
   ol:not([class]) {
     display: flex;
