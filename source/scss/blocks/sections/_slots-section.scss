@@ -1,0 +1,40 @@
+.slots-section {
+  overflow: hidden;
+  margin-bottom: clamp(60px, 7.2526vw, 85px);
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(30px, 3.413vw, 40px);
+
+    .main-btn {
+      width: fit-content;
+      align-self: center;
+    }
+
+    @include for-small-tablet{
+      padding: 0 clamp(15px, 5.5461vw, 65px);
+    }
+  }
+
+  .main-nav {
+    @include tablet {
+      overflow: scroll;
+      width: calc(100% + calc(var(--container-offset) * 2));
+      margin-left: calc(var(--container-offset) * -1);
+      padding: 0 var(--container-offset);
+    }
+
+    &__btn {
+      @include tablet {
+        white-space: nowrap;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

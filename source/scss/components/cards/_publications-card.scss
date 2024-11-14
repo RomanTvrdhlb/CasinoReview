@@ -20,6 +20,13 @@
         img,picture{
             width: 100%;
             height: 100%;
+            transition: all .3s;
+        }
+
+        &:hover{
+            img,picture{
+                transform: scale(1.05);
+            }
         }
     }
 
@@ -53,6 +60,7 @@
         color: var(--cl-g);
         grid-column: 3/4;
         grid-row: 1;
+        text-align: end;
     }
 
     &__name{

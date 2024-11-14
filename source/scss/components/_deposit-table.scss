@@ -7,10 +7,6 @@
     position: relative;
     z-index: 1;
 
-    @include small-tablet{
-        overflow: auto;
-    }
-
     &__row{
         padding: clamp(10px, 1.1092vw, 13.5px) 0;
         display: grid;
@@ -36,14 +32,27 @@
         }
 
         @include small-tablet{
-            grid-template-columns: .45fr .6fr .8fr 82px;
-            width: clamp(640px, 89.453vw, 687px);
+            grid-template-columns: .45fr .65fr .75fr;
+        }
+
+        @include mobile{
+            grid-template-columns: .6fr 1fr;
         }
     }
 
     .main-btn{
         height: 37px;
         padding: 8px 10px;
+
+        @include small-tablet{
+            grid-column: 1/-1;
+            justify-self: center;
+            margin-bottom: 8px;
+            
+            @include for-mobile{
+                max-width: 440px;
+            }
+        }
     }
 
     &__title{
@@ -83,6 +92,11 @@
         grid-template-columns: auto 1fr;
         align-items: end;
         grid-gap: 4px 10px;
+
+        @include mobile{
+            width: fit-content;
+            justify-self: end;
+        }
     }
 
     &__logo{
@@ -129,6 +143,12 @@
         svg,img{
             width: 100%;
             height: 100%;
+        }
+    }
+
+    ul{
+        @include mobile{
+            grid-column: 1/-1;
         }
     }
 }

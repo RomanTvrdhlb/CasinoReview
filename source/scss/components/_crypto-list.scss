@@ -1,0 +1,19 @@
+.crypto-list{
+    display: grid;
+    grid-gap: clamp(20px, 2.0478vw, 24px);
+    width: 100%;
+
+    @include for-tablet{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet{
+        @include for-mobile{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    @include mobile{
+        grid-template-columns: 100%;
+    }
+}

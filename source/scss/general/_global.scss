@@ -459,10 +459,15 @@ select:-webkit-autofill:focus {
   }
 
   img {
+    width: 100%;
     margin-top: clamp(4px, 1.3652vw, 16px);
     margin-bottom: clamp(18px, 2.7304vw, 32px);
     border-radius: clamp(10px, 1.3652vw, 16px);
     max-height: 420px;
     min-height: 160px;
+
+    &:first-child{
+      margin-top: 0;
+    }
   }
 }

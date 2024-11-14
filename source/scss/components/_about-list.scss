@@ -1,0 +1,29 @@
+.about-list{
+    display: grid;
+    grid-gap: clamp(20px, 2.1331vw, 25px);
+    width: 100%;
+
+    @include for-mobile{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include mobile{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item{
+        @include mobile{
+            &:nth-child(3){
+                grid-column: 1/-1;
+
+                .about-card{
+                    aspect-ratio: initial;
+
+                    &__image{
+                        height: Min(36.806vw, 212px);
+                    }
+                }
+            }
+        }
+    }
+}

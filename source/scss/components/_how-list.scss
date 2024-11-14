@@ -1,0 +1,12 @@
+.how-list{
+    display: grid;
+    grid-gap: clamp(20px, 2.0478vw, 24px);
+
+    @include for-mobile{
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+
+    @include mobile{
+        grid-template-columns: 100%;
+    }
+}

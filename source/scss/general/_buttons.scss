@@ -57,6 +57,16 @@
     color: var(--cl-j);
   }
 
+  &--transparent{
+    border: solid 1px var(--br-a);
+    background-color: transparent;
+    color: var(--cl-d);
+
+    &:hover{
+      border-color: var(--br-d);
+    }
+  }
+
   &--white{
     background: rgba(255, 255, 255, 0.9);
 

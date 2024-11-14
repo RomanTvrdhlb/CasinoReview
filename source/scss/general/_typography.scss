@@ -39,6 +39,58 @@
   }
 }
 
+.slot-link{
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: clamp(14px, 1.3652vw, 16px);
+  line-height: 150%;
+  color: var(--cl-a);
+  display: flex;
+  align-items: center;
+  grid-gap: clamp(5px, .8532vw, 10px);
+  transition: all .3s;
+
+  &__icon{
+    width: clamp(28px, 2.6451vw, 31px);
+    height: clamp(28px, 2.6451vw, 31px);
+    border-radius: 100%;
+    background: var(--bg-d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cl-a);
+  }
+
+  svg,img{
+    width: 24px;
+    height: 24px;
+  }
+
+  svg{
+    fill: transparent;
+  }
+
+  &:hover{
+    color: var(--cl-d);
+  }
+
+  &:active{
+    color: var(--cl-e);
+  }
+
+  &:disabled{
+    color: var(--cl-f);
+    opacity: 0.3;
+    pointer-events: none;
+  }
+}
+
+
+
+
+
+
+
 
 .title{
   font-family: var(--font-family);

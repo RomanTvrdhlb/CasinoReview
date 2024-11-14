@@ -21,23 +21,16 @@
   --overlay-bg: rgba(0, 0, 0, 0.5);
 
     // --------------- default JS variables ---------------
-    --header-height: 160px;
+    --header-height: 139px;
  
     @include tablet{
-      --header-height: 84px;
-    }
-
-    @include small-tablet{
-      --header-height: 76px;
+      --header-height: 62px;
     }
 
   // --------------- default font-family variables ---------------
 
-  --font-family: "PT-Sans", sans-serif; // var(--font-family);
-  --second-family: "Istok", sans-serif; // var(--second-family);
-  --third-family: "CharisSIL", sans-serif; // var(--third-family);
-  --font3:  "DM-Sans", sans-serif; // var(--font3);
-  --font4:  "Ubuntu", sans-serif; // var(--font4);
+  --font-family: "Lufga", sans-serif; // var(--font-family);
+  --second-family: "Poppins", sans-serif; // var(--second-family);
 
   // --------------- default text color variables ---------------
   --cl-a: #ffffff; // var(--cl-a);
@@ -75,10 +68,9 @@
   --br-a: #57e06c; // var(--br-a);
   --br-b: #3e3e4d; // var(--br-b);
   --br-c: #000; // var(--br-c);
-
-
-
   --br-d: #fff; // var(--br-d);
+
+
   --br-e: #000; // var(--br-e);
   --br-f: #4E60D5; // var(--br-f);
   --br-g: #db6550; // var(--br-g);

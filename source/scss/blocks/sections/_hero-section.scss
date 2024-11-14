@@ -3,7 +3,7 @@
   z-index: 2;
   overflow: hidden;
   padding: 41px 0 54px;
-  background:  var(--bg-c);
+  background: var(--bg-c);
   margin-bottom: clamp(40px, 3.8396vw, 45px);
 
   &__box {
@@ -13,17 +13,24 @@
     gap: clamp(30px, 3.413vw, 40px);
   }
 
-  .main-top{
+  .main-top {
     max-width: 809px;
 
-    .editor{
+    .editor {
       text-align: center;
 
-      h1,h2,h3,h4,h5,h6{
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         margin-bottom: clamp(16px, 1.6212vw, 19px);
       }
 
-      h1,h2,h3{
+      h1,
+      h2,
+      h3 {
         max-width: 550px;
         font-size: clamp(36px, 4.4369vw, 52px);
         font-weight: 500;
@@ -31,7 +38,7 @@
         letter-spacing: -0.01em;
       }
 
-      p{
+      p {
         font-size: clamp(14px, 1.3652vw, 16px);
         color: var(--cl-a);
       }
@@ -40,206 +47,466 @@
     align-items: center;
   }
 
- &--mode{
-  padding: clamp(41px, 5.9727vw, 70px) 0 0;
-  margin-bottom: clamp(40px, 5.802vw, 68px);
-  background: transparent;
+  &--mode {
+    padding: clamp(41px, 5.9727vw, 70px) 0 0;
+    margin-bottom: clamp(40px, 5.802vw, 68px);
+    background: transparent;
 
-  .main-top{
-    max-width: 809px;
+    .main-top {
+      max-width: 809px;
 
-    .editor{
-      justify-self: start;
+      .editor {
+        justify-self: start;
+
+        * {
+          text-align: start;
+        }
+      }
+
+      align-self: flex-start;
+    }
+  }
+
+  &--slot {
+    padding: clamp(51px, 8.7884vw, 103px) 0 clamp(40px, 5.5461vw, 65px);
+    margin-bottom: clamp(50px, 7.6792vw, 90px);
+
+    .hero-section {
+      &__image {
+        position: absolute;
+        top: 0;
+        right: clamp(10px, 4.2662vw, 50px);
+        z-index: -1;
+        width: Min(25.5973vw, 300px);
+        height: Min(27.9863vw, 328px);
+        transform: translateY(-20%);
+
+        img,
+        picture {
+          width: 100%;
+          height: 100%;
+        }
+
+        @include small-tablet {
+          transform: translateY(0);
+        }
+
+        @include mobile {
+          transform: translateY(25%);
+          right: -6px;
+        }
+
+        @include ios {
+          transform: translateY(50%);
+        }
+      }
+
+      &__box {
+        position: relative;
+        z-index: 1;
+        gap: clamp(30px, 6.9966vw, 82px);
+      }
+    }
+
+    .hero-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include tablet {
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        @include tablet {
+          @include for-mobile {
+            width: calc((100% / 3) - clamp(14px, 1.7065vw, 20px));
+          }
+        }
+
+        @include mobile {
+          width: calc((100% / 2) - (clamp(14px, 1.7065vw, 20px) / 2));
+        }
+      }
+    }
+
+    .main-top {
+      @include for-small-tablet {
+        margin-left: clamp(15px, 5.5461vw, 65px);
+        max-width: clamp(240px, 51.1945vw, 600px);
+      }
+
+      @include small-tablet {
+        @include for-mobile {
+          max-width: 65%;
+        }
+      }
+
+      .editor {
+        justify-self: start;
+
+        * {
+          text-align: start;
+
+          @include mobile {
+            max-width: 71%;
+          }
+        }
+
+        .main-link {
+          gap: 10px;
+          font-size: clamp(14px, 1.3652vw, 16px);
+
+          svg,
+          img {
+            width: 16px;
+            height: 16px;
+          }
+
+          &:last-child {
+            padding-top: 16px;
+          }
+        }
+
+        h1,h2{
+          @include mobile{
+            min-width: 270px;
+          }
+        }
+      }
+
+      align-self: flex-start;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: var(--hero-bg);
+      height: 90%;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      z-index: -1;
+      filter: blur(15px);
+      pointer-events: none;
+
+      @include mobile {
+        top: -15%;
+      }
+    }
+  }
+
+  &--about {
+    padding: clamp(41px, 5.1195vw, 60px) 0 0;
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+    background: transparent;
+
+    .main-top {
+      max-width: 809px;
+
+      .editor {
+        justify-self: start;
+
+        * {
+          text-align: start;
+        }
+      }
+
+      align-self: flex-start;
+    }
+  }
+
+  &--casino {
+    padding: clamp(31px, 6.2287vw, 73px) 0 0;
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+    background: transparent;
+
+    .hero-section {
+      &__box {
+        display: grid;
+        grid-gap: 20px clamp(24px, 3.413vw, 40px);
+        background: var(--bg-c);
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+
+        &::before {
+          position: absolute;
+          content: "";
+          background-image: var(--slot-bg);
+          height: 70%;
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          top: -15px;
+          left: -15px;
+          right: -15px;
+          z-index: -1;
+          filter: blur(15px);
+          pointer-events: none;
     
-      *{
-        text-align: start;
-      }
-    }
-
-    align-self: flex-start;
-  }
- }
-
-
-
- 
-
- &--products{
-  padding: calc(var(--header-height) + clamp(45px, 6.25vw, 90px)) 0 clamp(40px, 4.1667vw, 60px);
-
-  .hero-section{
-    &__box{
-      align-items: flex-start;
-      grid-gap: 35px;
-    }
-
-    &__image {
-      img,
-      picture {
-        @media (min-width: (1920px)) {
-          object-position: center bottom;
+          @include mobile {
+            top: -15%;
+          }
         }
-      
+
+        @include for-small-tablet{
+          padding: clamp(24px, 3.2423vw, 38px) clamp(24px, 6.8259vw, 80px);
+        }
+
+        @include small-tablet{
+          padding: 20px 16px 24px;
+        }
+
+        @include for-mobile{
+          grid-template-columns: auto 1fr;
+        }
+
         @include mobile{
-          object-position: 50% 50%;
+          grid-template-columns: 100%;
         }
+      }
+
+      &__icon{
+        border: 1px solid var(--br-a);
+        border-radius: 24px;
+        overflow: hidden;
+
+        img,picture{
+          width: 100%;
+          height: 100%;
+        }
+
+        @include for-mobile{
+          width: clamp(240px, 27.3038vw, 320px);
+          height: clamp(160px, 17.0648vw, 200px);
+        }
+
+        @include mobile{
+          width: 100%;
+          height: clamp(180px, 34.722vw, 200px);
+        }
+      }
+    }
+
+    .main-top {
+      max-width: 560px;
+
+      .editor {
+        justify-self: start;
+
+        h1,h2,h3,h4,h5,h6{
+          font-weight: 600;
+          font-size: clamp(30px, 3.5836vw, 42px);
+          line-height: 120%;
+          color: var(--cl-a);
+        }
+        
+        p{
+          color: var(--cl-c);
+        }
+
+        * {
+          text-align: start;
+        }
+      }
+
+      align-self: center;
+    }
+  }
+
+
+
+
+  &--products {
+    padding: calc(var(--header-height) + clamp(45px, 6.25vw, 90px)) 0
+      clamp(40px, 4.1667vw, 60px);
+
+    .hero-section {
+      &__box {
+        align-items: flex-start;
+        grid-gap: 35px;
+      }
+
+      &__image {
+        img,
+        picture {
+          @media (min-width: (1920px)) {
+            object-position: center bottom;
+          }
+
+          @include mobile {
+            object-position: 50% 50%;
+          }
+        }
+      }
+    }
+
+    .main-top {
+      max-width: clamp(400px, 55.5556vw, 800px);
+
+      .editor {
+        text-align: start;
+
+        h1,
+        h2 {
+          margin-bottom: clamp(20px, 2.4306vw, 35px);
+        }
+
+        p {
+          @include for-tablet {
+            padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
+          }
+        }
+      }
+
+      align-items: flex-start;
+
+      @include mobile {
+        max-width: 90%;
       }
     }
   }
 
-  .main-top{
-    max-width: clamp(400px, 55.5556vw, 800px);
+  &--contacts {
+    padding: calc(var(--header-height) + clamp(50px, 7.2222vw, 104px)) 0
+      clamp(150px, 17.2917vw, 249px);
 
-    .editor{
-      text-align: start;
+    .main-top {
+      max-width: clamp(400px, 56.9444vw, 820px);
 
-      h1,h2{
-        margin-bottom: clamp(20px, 2.4306vw, 35px);
-      }
+      .editor {
+        text-align: start;
 
-      p{
-        @include for-tablet{
-          padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-family: var(--font-family);
+          font-weight: 700;
+          font-size: clamp(14px, 1.3194vw, 19px);
+          line-height: 139%;
+          color: var(--cl-d);
+          margin-bottom: 0;
+        }
+
+        p {
+          font-family: var(--font-family);
+          text-align: justify;
         }
       }
+
+      align-items: flex-start;
+
+      @include mobile {
+        max-width: 100%;
+      }
     }
 
-    align-items: flex-start;
-
-    @include mobile{
-      max-width: 90%;
+    & + .contacts-section {
+      margin-top: calc(
+        (clamp(30px, 4.1667vw, 60px) + clamp(60px, 7.0139vw, 101px)) * -1
+      );
     }
   }
- }
 
- &--contacts{
-  padding: calc(var(--header-height) + clamp(50px, 7.2222vw, 104px)) 0 clamp(150px, 17.2917vw, 249px);
+  &--recipe {
+    padding: calc(var(--header-height) + clamp(30px, 2.7778vw, 40px)) 0
+      clamp(40px, 4.1667vw, 60px);
+    background: var(--bg-c);
 
-  .main-top{
-    max-width: clamp(400px, 56.9444vw, 820px);
-
-    .editor{
-      text-align: start;
-
-      h3,h4,h5,h6{
-        font-family: var(--font-family);
-        font-weight: 700;
-        font-size: clamp(14px, 1.3194vw, 19px);
-        line-height: 139%;
-        color: var(--cl-d);
-        margin-bottom: 0;
-      }
-
-      p{
-        font-family: var(--font-family);
-        text-align: justify;
+    .hero-section {
+      &__box {
+        align-items: flex-start;
+        grid-gap: 35px;
       }
     }
 
-    align-items: flex-start;
+    .main-top {
+      max-width: 1100px;
 
-    @include mobile{
+      .editor {
+        text-align: start;
+
+        h1,
+        h2 {
+          margin-bottom: clamp(20px, 2.4306vw, 35px);
+        }
+
+        p {
+          @include for-tablet {
+            padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
+          }
+        }
+      }
+
+      align-items: flex-start;
+    }
+
+    & + .recipe-section {
+      margin-top: calc(clamp(40px, 4.1667vw, 60px) * -1);
+    }
+  }
+
+  &--single {
+    padding: calc(var(--header-height) + clamp(30px, 2.7778vw, 40px)) 0
+      clamp(40px, 4.1667vw, 60px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      left: 0;
+      top: 100%;
+      transform: translateY(-100%);
+      pointer-events: none;
+      background-image: var(--hero-bg);
+      background-position: center;
+      background-repeat: repeat-x;
+      background-size: cover;
+      height: 125px;
+      background-position: top center;
+
+      @media (min-width: (2000px)) {
+        height: 180px;
+      }
+    }
+
+    .hero-section {
+      &__box {
+        align-items: flex-start;
+        grid-gap: 35px;
+      }
+    }
+
+    .main-top {
       max-width: 100%;
-    }
-  }
 
-  & + .contacts-section{
-    margin-top: calc( (clamp(30px, 4.1667vw, 60px) + clamp(60px, 7.0139vw, 101px)) * -1 );
-  }
- }
+      .editor {
+        text-align: start;
 
- &--recipe{
-  padding: calc(var(--header-height) + clamp(30px, 2.7778vw, 40px)) 0 clamp(40px, 4.1667vw, 60px);
-  background: var(--bg-c);
+        h1,
+        h2 {
+          margin-bottom: clamp(20px, 2.4306vw, 35px);
+        }
 
-  .hero-section{
-    &__box{
-      align-items: flex-start;
-      grid-gap: 35px;
-    }
-  }
-
-  .main-top{
-    max-width: 1100px;
-
-    .editor{
-      text-align: start;
-     
-
-      h1,h2{
-        margin-bottom: clamp(20px, 2.4306vw, 35px);
-      }
-
-      p{
-        @include for-tablet{
-          padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
+        p {
+          @include for-tablet {
+            padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
+          }
         }
       }
-    }
 
-    align-items: flex-start;
-  }
-
-  & + .recipe-section{
-    margin-top: calc(clamp(40px, 4.1667vw, 60px) * -1);
-  }
- }
-
- &--single{
-  padding: calc(var(--header-height) + clamp(30px, 2.7778vw, 40px)) 0 clamp(40px, 4.1667vw, 60px);
-
-
-  &::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    left: 0;
-    top: 100%;
-    transform: translateY(-100%);
-    pointer-events: none;
-    background-image: var(--hero-bg);
-    background-position: center;
-    background-repeat: repeat-x;
-    background-size: cover;
-    height: 125px;
-    background-position: top center;
-
-    @media (min-width: (2000px)) {
-      height: 180px;
-    }
-  }
-
-  .hero-section{
-    &__box{
       align-items: flex-start;
-      grid-gap: 35px;
-    }
-  }
-
-  .main-top{
-    max-width: 100%;
-
-    .editor{
-      text-align: start;
-     
-
-      h1,h2{
-        margin-bottom: clamp(20px, 2.4306vw, 35px);
-      }
-
-      p{
-        @include for-tablet{
-          padding: clamp(14px, 1.3889vw, 20px) clamp(16px, 1.7361vw, 25px);
-        }
-      }
     }
 
-    align-items: flex-start;
+    & + .recipe-section {
+      margin-top: calc(clamp(40px, 4.1667vw, 60px) * -1);
+    }
   }
-
-  & + .recipe-section{
-    margin-top: calc(clamp(40px, 4.1667vw, 60px) * -1);
-  }
- }
 }

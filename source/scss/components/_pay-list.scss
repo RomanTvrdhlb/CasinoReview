@@ -1,0 +1,118 @@
+.pay-list {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--bg-c);
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  counter-reset: li;
+
+  @include for-small-tablet {
+    overflow: hidden;
+  }
+
+  @include for-mobile {
+    padding: 17px clamp(10px, 5.4608vw, 64px) 12px;
+  }
+
+  @include mobile {
+    padding: 17px 10px 12px;
+  }
+
+  &__item {
+    padding: clamp(10px, 1.0239vw, 12px) 0;
+    display: grid;
+    align-items: center;
+    grid-gap: 8px;
+
+    &:not(.pay-list__item--head) {
+      counter-increment: li;
+
+      &::before {
+        content: counter(li);
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+        color: var(--cl-a);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(40px, 4.0956vw, 48px);
+        height: clamp(40px, 4.0956vw, 48px);
+      }
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: solid 1px rgba(62, 62, 77, 0.6);
+    }
+
+    &--head {
+      margin-top: -17px;
+      padding: 17px 0 16px;
+      position: relative;
+      z-index: 1;
+
+      &::before {
+        border-radius: 16px 16px 0 0;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        background: var(--bg-d);
+        top: 0;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + (clamp(16px, 5.4608vw, 64px) * 2));
+
+        @include for-mobile {
+          width: calc(100% + (clamp(16px, 5.4608vw, 64px) * 2));
+        }
+
+        @include mobile {
+          width: calc(100% + 20px);
+        }
+      }
+
+      .pay-list__title:first-of-type {
+        grid-column: 1/3;
+        margin-left: calc(clamp(40px, 4.0956vw, 48px) / 2);
+      }
+    }
+
+    @include for-small-tablet {
+      grid-template-columns: clamp(40px, 4.0956vw, 48px) 0.75fr 1fr;
+    }
+
+    @include small-tablet {
+      grid-template-columns: clamp(40px, 4.0956vw, 48px) 0.33fr 1fr;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: clamp(16px, 1.5358vw, 18px);
+    line-height: 150%;
+    color: var(--cl-b);
+    opacity: 0.8;
+  }
+
+  &__value {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: clamp(14px, 1.3652vw, 16px);
+    line-height: 150%;
+    color: var(--cl-a);
+  }
+
+  &__name {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: clamp(16px, 1.5358vw, 18px);
+    line-height: 150%;
+    color: var(--cl-a);
+  }
+}

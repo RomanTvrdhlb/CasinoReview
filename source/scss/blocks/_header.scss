@@ -211,6 +211,12 @@
       max-height: initial !important;
       visibility: hidden;
     }
+
+    .menu-item-has-children{
+      .menu-button{
+        margin-left: 12px;
+      }
+    }
   }
 
   @include tablet {

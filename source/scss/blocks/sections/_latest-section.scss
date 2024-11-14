@@ -1,0 +1,31 @@
+.latest-section{
+    margin-bottom: clamp(60px, 7.2526vw, 85px);
+  
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(30px, 3.413vw, 40px);
+
+      @include for-tablet{
+        padding: 0 clamp(16px, 5.4608vw, 64px);
+      }
+    }
+
+    .slots-list{
+        @include mobile{
+            grid-template-columns: 100%;
+        }
+    }
+
+    .main-top{
+        .editor{
+            h1,h2,h3,h4,h5,h6{
+                font-weight: 600;
+                font-size: clamp(20px, 2.3891vw, 28px);
+                line-height: 120%;
+                text-align: center;
+            }
+        }
+    }
+}
