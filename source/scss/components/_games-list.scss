@@ -1,0 +1,13 @@
+.games-list{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &__item{
+        &:nth-child(even){
+           .games-card{
+                background: var(--bg-c);
+           }
+        }
+    }
+}

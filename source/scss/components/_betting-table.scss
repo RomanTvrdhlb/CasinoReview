@@ -167,11 +167,37 @@
     color: var(--cl-a);
   }
 
+  &__spins {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--cl-a);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-self: center;
+    margin-left: 6px;
+
+    svg,
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
   &__rating {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: clamp(40px, 4.0956vw, 48px);
     aspect-ratio: 1;
     margin-left: clamp(2px, 0.6826vw, 8px);
+    font-family: var(--second-family);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--cl-a);
 
     svg,
     img {
@@ -284,6 +310,41 @@
     color: var(--cl-d);
   }
 
+  &__value {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: clamp(16px, 1.5358vw, 18px);
+    line-height: 110%;
+    text-align: center;
+    color: var(--cl-d);
+  }
+
+  &__other{
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--cl-c);
+    max-width: 107px;
+    margin-left: 20px;
+  }
+
+  &__wrapp{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--cl-d);
+
+    .main-link{
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
+  }
+
   &--crypto {
     padding: 0 clamp(16px, 3.2423vw, 38px) clamp(16px, 2.3891vw, 28px);
 
@@ -345,77 +406,462 @@
     }
   }
 
-  &--esport{
+  &--esport {
     padding: 0 clamp(16px, 3.2423vw, 38px) clamp(16px, 2.3891vw, 28px);
 
     @include small-tablet {
-        overflow: auto;
+      overflow: auto;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .betting-table {
+      &__pretitle {
+        font-weight: 500;
+        line-height: 120%;
       }
-  
-      &::-webkit-scrollbar {
-        display: none;
-      }
 
-    .betting-table{
+      &__title {
+        @include mobile {
+          display: inline-flex !important;
 
-        &__pretitle{
-            font-weight: 500;
-            line-height: 120%;
-        }
-
-        &__title {
-            @include mobile {
-              display: inline-flex !important;
-    
-              &:nth-of-type(2) {
-                text-align: start;
-              }
-            }
+          &:nth-of-type(2) {
+            text-align: start;
           }
+        }
+      }
 
-        &__inner{
-            p{
-                font-family: var(--font-family);
-                font-weight: 500;
-                font-size: 14px;
-                line-height: 129%;
-                color: var(--cl-a);
-                max-width: 212px;
-            }
-
-            @include for-small-tablet{
-                &:nth-of-type(2){
-                    margin-left: 15px;
-                 }
-            }
-
-            @include mobile{
-                width: 100%;
-                justify-self: start;
-            }
+      &__inner {
+        p {
+          font-family: var(--font-family);
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 129%;
+          color: var(--cl-a);
+          max-width: 212px;
         }
 
-        &__row {
+        @include for-small-tablet {
+          &:nth-of-type(2) {
+            margin-left: 15px;
+          }
+        }
+
+        @include mobile {
+          width: 100%;
+          justify-self: start;
+        }
+      }
+
+      &__row {
+        @include for-tablet {
+          grid-template-columns: 0.91fr 1fr minmax(230px, 0.55fr);
+        }
+
+        @include tablet {
+          @include for-small-tablet {
+            grid-template-columns: 0.75fr 1fr minmax(230px, 0.55fr);
+          }
+        }
+
+        @include small-tablet {
+          grid-template-columns: 0.75fr 1fr minmax(230px, 0.55fr);
+          width: clamp(670px, 95.703vw, 735px);
+        }
+      }
+
+      &__icon {
+        height: 20px;
+        grid-row: initial;
+      }
+    }
+  }
+
+  &--dice {
+    .betting-table {
+      &__inner {
+        @include mobile {
+          grid-column: 1/-1;
+          grid-row: 2/3;
+          width: fit-content;
+          justify-self: center;
+          margin-bottom: 8px;
+        }
+      }
+
+      &__title {
+        &:last-of-type {
+          text-align: center;
+
+          @include mobile {
+            display: inline-flex;
+            justify-self: center;
+          }
+        }
+
+        &:nth-of-type(2) {
+          margin-left: 26px;
+
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+
+      &__row {
+        @include for-tablet {
+          grid-template-columns: 0.53fr 0.6fr minmax(122px, 0.17fr);
+        }
+
+        @include tablet {
+          @include for-small-tablet {
+            grid-template-columns: 0.63fr 0.6fr minmax(122px, 0.17fr);
+          }
+        }
+
+        @include small-tablet {
+          grid-template-columns: 0.75fr 0.7fr minmax(90px, 0.17fr);
+        }
+
+        @include mobile {
+          grid-template-columns: 1fr minmax(90px, 0.17fr);
+        }
+      }
+    }
+  }
+
+  &--lottery {
+    @include for-tablet {
+      padding: 0 clamp(16px, 6.8259vw, 80px) 8px;
+    }
+
+    @include mobile {
+      overflow: auto;
+    }
+
+    .betting-table {
+      &__name {
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+      }
+
+      &__logo {
+        width: clamp(30px, 3.413vw, 40px);
+        background: transparent;
+        border-radius: initial;
+      }
+
+      &__info {
+        gap: clamp(8px, 1.0239vw, 12px);
+      }
+
+      &__value {
+        font-weight: 600;
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+        color: var(--cl-a);
+      }
+
+      &__text {
+        align-self: center;
+        font-weight: 700;
+        line-height: 150%;
+      }
+
+      &__pretitle {
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--cl-c);
+
+        &:last-of-type {
+          text-align: end;
+        }
+      }
+
+      &__title {
+        font-size: 16px;
+
+        &:last-of-type {
+          text-align: end;
+        }
+
+        &:nth-of-type(2) {
+          text-align: center;
+        }
+
+        @include mobile {
+          display: inline !important;
+        }
+      }
+
+      &__row {
+        &--head {
+          &::before {
             @include for-tablet {
-              grid-template-columns: .91fr 1fr minmax(230px,.55fr);
-            }
-        
-            @include tablet {
-              @include for-small-tablet {
-                grid-template-columns: .75fr 1fr minmax(230px,.55fr);
-              }
-            }
-        
-            @include small-tablet {
-                grid-template-columns: .75fr 1fr minmax(230px,.55fr);
-                width: clamp(670px, 95.703vw, 735px);
+              width: calc(100% + clamp(16px, 6.8259vw, 80px) * 2);
             }
           }
-
-        &__icon{
-            height: 20px;
-            grid-row: initial;
         }
+
+        @include for-tablet {
+          grid-template-columns: minmax(200px, 0.24fr) 0.65fr 0.35fr minmax(
+              122px,
+              0.17fr
+            );
+        }
+
+        @include tablet {
+          @include for-small-tablet {
+            grid-template-columns: 0.5fr 0.45fr 0.5fr minmax(122px, 0.17fr);
+          }
+        }
+
+        @include small-tablet {
+          grid-template-columns: 0.5fr 0.45fr 0.6fr minmax(90px, 0.17fr);
+        }
+
+        @include mobile {
+          grid-template-columns: 0.65fr 0.45fr 0.5fr minmax(70px, 0.17fr);
+          width: 495px;
+        }
+      }
+    }
+  }
+
+  &--info {
+    padding: 0 clamp(16px, 3.413vw, 40px) 8px;
+
+    @include tablet {
+      overflow: auto;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .betting-table {
+      &__name {
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+      }
+
+      &__logo {
+        width: clamp(30px, 3.413vw, 40px);
+        background: transparent;
+        border-radius: initial;
+      }
+
+      &__info {
+        gap: clamp(8px, 1.0239vw, 12px);
+      }
+
+      &__value {
+        font-weight: 600;
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+        color: var(--cl-a);
+      }
+
+      &__inner{
+        @include mobile{
+          width: 100%;
+          justify-self: start;
+        }
+      }
+
+      &__text {
+        font-weight: 600;
+        font-size: clamp(14px, 1.3652vw, 16px);
+      }
+
+      &__wrapp{
+        & + .betting-table__pretitle{
+          font-size: 14px;
+          font-weight: 700;
+        }
+      }
+
+      &__title {
+        font-size: 16px;
+        line-height: 115%;
+
+        &:last-of-type {
+          text-align: center;
+        }
+
+        &:nth-of-type(2){
+          @include mobile{
+            text-align: start;
+          }
+         }
+
+        &:nth-of-type(5){
+         padding-left: 20px;
+        }
+
+        &:nth-of-type(6){
+          text-align: center;
+        }
+
+        @include mobile {
+          display: inline !important;
+        }
+      }
+
+      &__row {
+        &--head {
+          &::before {
+            @include for-tablet {
+              width: calc(100% + clamp(16px, 3.413vw, 40px) * 2);
+            }
+          }
+        }
+
+        @include for-laptop{
+          grid-template-columns: minmax(160px, 0.35fr) 0.31fr .23fr .3fr .25fr minmax(75px, 0.18fr) minmax(55px, 0.1fr);
+        }
+
+        @include laptop{
+          @include for-tablet{
+            grid-template-columns: minmax(160px, 0.29fr) 0.25fr .2fr .3fr .25fr minmax(70px, 0.15fr) minmax(55px, 0.1fr);
+          }
+        }
+
+        @include tablet{
+          width: 915px;
+          grid-template-columns: minmax(clamp(140px, 13.6519vw, 160px), 0.29fr) 0.25fr .2fr .3fr .25fr minmax(70px, 0.15fr) minmax(55px, 0.1fr);
+        }
+      }
+    }
+  }
+
+  &--games {
+    @include for-tablet {
+      padding: 0 clamp(16px, 3.413vw, 40px) 8px;
+    }
+
+    @include small-tablet {
+      overflow: auto;
+    }
+
+    .betting-table {
+      &__name {
+        font-size: clamp(14px, 1.3652vw, 16px);
+        line-height: 150%;
+      }
+
+      &__logo {
+        width: clamp(30px, 3.413vw, 40px);
+        background: transparent;
+        border-radius: initial;
+      }
+
+      &__value {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        text-align: start;
+      }
+
+      &__text {
+        align-self: center;
+        font-weight: 400;
+        line-height: 150%;
+        color: var(--cl-c);
+        text-align: start;
+
+        &:nth-child(5){
+          text-align: center;
+        }
+
+        &:last-of-type{
+          text-align: end;
+        }
+      }
+
+      &__title {
+        font-size: 16px;
+        line-height: 115%;
+
+        &:last-of-type {
+          text-align: end;
+        }
+
+        &:nth-of-type(2) {
+          @include mobile{
+            text-align: start;
+          }
+        }
+
+        @include mobile {
+          display: inline !important;
+        }
+      }
+
+      &__row {
+        &--head {
+          &::before {
+            @include for-tablet {
+              width: calc(100% + clamp(16px, 3.413vw, 40px) * 2);
+            }
+          }
+        }
+
+        @include for-tablet {
+          grid-template-columns: minmax(200px, 0.24fr) 0.35fr 0.38fr .3fr minmax(100px, 0.17fr) minmax(120px, 0.17fr);
+        }
+
+        @include tablet {
+          @include for-small-tablet {
+            grid-template-columns: minmax(140px, 0.24fr) 0.35fr 0.3fr .37fr minmax(100px, 0.2fr) minmax(100px, 0.22fr);
+          }
+        }
+
+        @include small-tablet {
+          grid-template-columns: minmax(140px, 0.24fr) 0.3fr 0.3fr .35fr minmax(100px, 0.2fr) minmax(95px, 0.12fr);
+          width: 695px;
+        }
+      }
+    }
+  }
+
+  &--review {
+    .betting-table {
+      // &__inner {
+      //   @include mobile {
+      //     grid-column: 1/-1;
+      //     grid-row: 2/3;
+      //     width: fit-content;
+      //     justify-self: center;
+      //     margin-bottom: 8px;
+      //   }
+      // }
+
+      &__text {
+        @include mobile{
+          text-align: end;
+        }
+      }
+
+      &__pretitle{
+        &:only-of-type{
+          @include mobile{
+            text-align: end;
+          }
+        }
+      }
+
+      &__row {
+        @include for-mobile{
+          grid-template-columns: 0.8fr 0.6fr;
+        }
+
+        @include mobile{
+          grid-template-columns: 0.75fr 0.8fr;
+        }
+      }
     }
   }
 }

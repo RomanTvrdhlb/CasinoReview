@@ -5,14 +5,8 @@
   --body-font-size: 16px;
   --content-width: 1172px;
 
-  --content-width-mode: 1920px;
-  --content-width-mini: 952px;
-
   --container-offset: clamp(16px, 2.0478vw, 24px);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
-
-  --container-width-mode: calc(var(--content-width-mode) + (var(--container-offset) * 2));
-  --container-width-mini: calc(var(--content-width-mini) + (var(--container-offset) * 2));
 
   // --------------- default scroll variables ---------------
   --scrollbar-thumb:  #48b859;
@@ -43,13 +37,6 @@
   --cl-h: #000004; // var(--cl-h);
   --cl-j:  #060610; // var(--cl-j);
 
-
-  --cl-k:  #0328ee; // var(--cl-k);
-  --cl-l:  #010725; // var(--cl-l);
-  --cl-m:  #ced2fe; // var(--cl-m);
-  --cl-n:  #757575; // var(--cl-n);
-  --cl-o:  #4E60D5; // var(--cl-o);
-
   // --------------- default background color variables ---------------
   --bg-a: #ffffff; // var(--bg-a);
   --bg-b: #000000; // var(--bg-b);
@@ -61,26 +48,19 @@
   --bg-h: #131b26; // var(--bg-h);
   --bg-j: #1b1b29; // var(--bg-j);
 
-
-  --bg-k: #4E60D5; // var(--bg-k);
-
   // --------------- default border color variable ---------------
   --br-a: #57e06c; // var(--br-a);
   --br-b: #3e3e4d; // var(--br-b);
   --br-c: #000; // var(--br-c);
   --br-d: #fff; // var(--br-d);
-
-
-  --br-e: #000; // var(--br-e);
-  --br-f: #4E60D5; // var(--br-f);
-  --br-g: #db6550; // var(--br-g);
+  --br-e: #3b3b58; // var(--br-e);
 
  // --------------- default gradient color variable ---------------
  --gr-a: linear-gradient(180deg, #57e06c 0%, #136832 100%); // var(--gr-a);
  --gr-b: linear-gradient(180deg, rgba(17, 17, 27, 0) 0%, #11111b 100%); // var(--gr-b);
 
  // --------------- loader variable -------------------------------
- --loader: linear-gradient(90deg, #db9350 0%, rgba(255, 255, 255, 1) 49.5%, rgba(255, 255, 255, 1) 50.5%, #00209f 100%); // var(--loader);
+ --loader: linear-gradient(90deg, #57e06c 0%, rgba(255, 255, 255, 1) 45.5%, rgba(255, 255, 255, 1) 55.5%, #2ac441 100%); // var(--loader);
 }       
 
 

@@ -5,7 +5,18 @@
         display: flex;
         flex-direction: column;
         gap: 24px;
-   
+    }
+
+    .main-top{
+        .editor{
+            *{
+                text-align: center;
+            }
+
+            p{
+                font-size: clamp(14px, 1.3652vw, 16px);
+            }
+        }
     }
 
 }

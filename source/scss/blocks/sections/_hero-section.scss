@@ -85,6 +85,7 @@
         picture {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
 
         @include small-tablet {
@@ -110,6 +111,29 @@
 
           @include mobile {
             transform: translateY(65%);
+          }
+  
+          @include ios {
+            transform: translateY(95%);
+          }
+        }
+
+        &.medium{
+          width: Min(22.9522vw, 269px);
+          height: Min(22.9522vw, 269px);
+
+          @include for-small-tablet{
+            transform: translateY(-15%);
+          }
+
+          @include small-tablet{
+            @include for-mobile{
+              transform: translateY(15%);
+            }
+          }
+
+          @include mobile {
+            transform: translateY(55%);
           }
   
           @include ios {
@@ -375,7 +399,298 @@
     }
   }
 
- 
+  &--review {
+    padding: clamp(31px, 5.2048vw, 61px) 0 0;
+    margin-bottom: clamp(41px, 4.0956vw, 48px);
+    background: transparent;
 
+    .hero-section {
+      &__box {
+        display: grid;
+        grid-gap: clamp(16px, 2.0478vw, 24px) clamp(16px, 3.413vw, 40px);
+        background: var(--bg-c);
+        border-radius: 16px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        grid-template-columns: auto 1fr;
 
+        &::before {
+          position: absolute;
+          content: "";
+          background-image: var(--slot-bg);
+          height: 70%;
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          top: -15px;
+          left: -15px;
+          right: -15px;
+          z-index: -1;
+          filter: blur(15px);
+          pointer-events: none;
+    
+          @include mobile {
+            top: -15%;
+          }
+        }
+
+        @include for-tablet{
+          padding: clamp(24px, 4.0956vw, 48px) clamp(24px, 6.8259vw, 80px);
+        }
+
+        @include tablet{
+          padding: 20px 16px 24px;
+        }
+      }
+
+      &__icon{
+        border: 1px solid var(--br-e);
+        border-radius: 24px;
+        overflow: hidden;
+        background: var(--bg-c);
+        width: clamp(120px, 15.3584vw, 180px);
+        height: clamp(120px, 15.3584vw, 180px);
+
+        img,picture{
+          width: 100%;
+          height: 100%;
+        }
+
+        @include for-small-tablet{
+          grid-row: 1/3;
+        }
+
+        @include ios{
+          width: 100px;
+          height: 100px;
+        }
+      }
+    }
+
+    .main-review{
+      align-self: start;
+
+      @include small-tablet{
+        grid-column: 1/-1;
+        width: 100%;
+      }
+    }
+
+    .main-top {
+      align-self: end;
+      max-width: 560px;
+
+      .editor {
+        justify-self: start;
+
+        h1,h2,h3,h4,h5,h6{
+          font-weight: 600;
+          font-size: clamp(30px, 3.5836vw, 42px);
+          line-height: 120%;
+          color: var(--cl-a);
+        }
+        
+        p{
+          color: var(--cl-c);
+        }
+
+        * {
+          text-align: start;
+        }
+      }
+
+      align-self: center;
+    }
+  }
+
+  &--favorite {
+    padding: clamp(51px, 8.7884vw, 103px) 0 clamp(40px, 5.5461vw, 65px);
+    margin-bottom: clamp(70px, 10.2389vw, 120px);
+
+    .hero-section {
+
+      &__box {
+        position: relative;
+        z-index: 1;
+        gap: clamp(30px, 3.413vw, 40px);
+      }
+
+      &__coin{
+        position: absolute;
+        z-index: 3;
+        pointer-events: none;
+
+        img,picture,svg{
+            width: 100%;
+            height: 100%;
+        }
+
+        &:not(.small){
+            width: Min(15.1877vw, 178px);
+            height: Min(15.1877vw, 178px);
+           
+
+            @include for-small-tablet{
+                right: -2%;
+            }
+
+            @include small-tablet{
+                right: 0;
+                min-width: 74px;
+                min-height: 74px;
+            }
+
+            @include for-mobile{
+                top: -35px;
+            }
+
+            @include mobile{
+                top: -45px;
+                right: -20px;
+            }
+        }
+
+        &.small{
+            width: Min(14.3345vw, 168px);
+            height: Min(14.3345vw, 168px);
+
+            @media (min-width: (1351px)) {
+              left: -8.5%;
+            }
+
+            @media (max-width: (1350px)) {
+              left: -3%;
+            }
+
+            @include for-tablet{
+                bottom: 43%;
+            }
+
+            @include tablet{
+              top: 20%;
+            }
+
+            @include small-tablet{
+                min-width: 60px;
+                min-height: 60px;
+            }
+
+            @include mobile{
+                left: -25px;
+                top: -25px;
+            }
+        }
+    }
+    }
+
+    .hero-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include tablet {
+        flex-wrap: wrap;
+      }
+
+      &__item {
+        @include tablet {
+          @include for-mobile {
+            width: calc((100% / 3) - clamp(14px, 1.7065vw, 20px));
+          }
+        }
+
+        @include mobile {
+          width: calc((100% / 2) - (clamp(14px, 1.7065vw, 20px) / 2));
+        }
+      }
+
+      .hero-card__title{
+        @include for-laptop{
+          max-width: 70px;
+        }
+      }
+
+      & + .main-link{
+        gap: 10px;
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: clamp(16px, 2.3038vw, 27px);
+        margin-left: 16px;
+
+        svg,img{
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .main-top {
+      @include for-small-tablet {
+        max-width: clamp(400px, 57.9352vw, 679px);
+      }
+
+      @include small-tablet {
+        @include for-mobile {
+          max-width: 75%;
+        }
+      }
+
+      .editor {
+        justify-self: center;
+
+        * {
+          text-align: center;
+        }
+
+        .main-link {
+          gap: 10px;
+          font-size: clamp(14px, 1.3652vw, 16px);
+
+          svg,
+          img {
+            width: 16px;
+            height: 16px;
+          }
+
+          &:last-child {
+            padding-top: 16px;
+          }
+        }
+
+        h1,h2,h3,h4,h5,h6{
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        h1,h2{
+          @include mobile{
+            min-width: 270px;
+          }
+        }
+      }
+
+      align-self: center;
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-image: var(--hero-bg);
+      height: 90%;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      z-index: -1;
+      filter: blur(15px);
+      pointer-events: none;
+
+      @include mobile {
+        top: -15%;
+      }
+    }
+  }
 }

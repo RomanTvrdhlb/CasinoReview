@@ -1,8 +1,7 @@
 @import "../blocks/header.scss";
 @import "../blocks/mobile-menu.scss";
-@import "../blocks/modal.scss";
+// @import "../blocks/modal.scss";
 @import "../blocks/footer.scss";
-
 
 @import "../blocks/sections/review-section.scss";
 @import "../blocks/sections/faq-section.scss";
@@ -28,15 +27,7 @@
 @import "../blocks/sections/betting-section.scss";
 @import "../blocks/sections/types-section.scss";
 @import "../blocks/sections/casino-section.scss";
-
-
-
-@import "../blocks/sections/order-section.scss";
-@import "../blocks/sections/product-section.scss";
-@import "../blocks/sections/error-section.scss";
-@import "../blocks/sections/history-section.scss";
-@import "../blocks/sections/contacts-section.scss";
-@import "../blocks/sections/cooking-section.scss";
-@import "../blocks/sections/recipe-section.scss";
-@import "../blocks/sections/more-section.scss";
-@import "../blocks/sections/details-section.scss";
+@import "../blocks/sections/check-section.scss";
+@import "../blocks/sections/tips-section.scss";
+@import "../blocks/sections/games-section.scss";
+@import "../blocks/sections/rating-section.scss";

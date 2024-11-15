@@ -5,14 +5,8 @@
 @import "../components/main-components/main-about.scss";
 @import "../components/main-components/main-pros.scss";
 @import "../components/main-components/main-types.scss";
-
-
-
-@import "../components/main-components/page-nav.scss";
-@import "../components/main-components/socials.scss";
-@import "../components/main-components/main-form.scss";
-@import "../components/main-components/main-banner.scss";
-@import "../components/main-components/breadcrumbs.scss";
+@import "../components/main-components/main-rating.scss";
+@import "../components/main-components/main-review.scss";
 
 // ----------------- BLOCK COMPONENTS -----------------
 @import "../components/accordion.scss";
@@ -32,15 +26,10 @@
 @import "../components/info-slot.scss";
 @import "../components/provider-list.scss";
 @import "../components/casino-list.scss";
-
-
+@import "../components/check-table.scss";
+@import "../components/tips-list.scss";
 @import "../components/news-list.scss";
-@import "../components/about-slider.scss";
-@import "../components/product-list.scss";
-@import "../components/info-slider.scss";
-@import "../components/cooking-slider.scss";
-@import "../components/more-nav.scss";
-@import "../components/product-slider.scss";
+@import "../components/games-list.scss";
 
 
 // ----------------- CARD COMPONENTS -----------------
@@ -53,15 +42,5 @@
 @import "../components/cards/slot-card.scss";
 @import "../components/cards/crypto-card.scss";
 @import "../components/cards/casinos-card.scss";
-
-
-@import "../components/cards/news-card.scss";
-@import "../components/cards/info-card.scss";
-@import "../components/cards/product-card.scss";
-@import "../components/cards/cooking-card.scss";
-@import "../components/cards/recipe-card.scss";
-
-
-
-
-
+@import "../components/cards/tips-card.scss";
+@import "../components/cards/games-card.scss";
